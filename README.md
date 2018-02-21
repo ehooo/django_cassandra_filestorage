@@ -56,13 +56,13 @@ Usage
 -----
 1. Add django_cassandra_filestorage to ``INSTALLED_APPS`` in your settings.py file:
 
-	```
+```
   INSTALLED_APPS += ('django_cassandra_filestorage',)
-	```
+```
 
 2. Also create `CASSANDRA_FS` setting:
 
-	```
+```
   CASSANDRA_FS = {
     'NAME': 'dbname',
     'HOST': 'db1.example.com,db2.example.com',
@@ -73,21 +73,21 @@ Usage
       }
     }
   }
-  ```
+```
 
 3.1 Set as default storage:
 
-  ```
+```
 DEFAULT_FILE_STORAGE = 'django_cassandra_filestorage.storage.CassandraStorage'
-  ```
+```
 
 3.2 Optional use:
 
-  ```
+```
 from django_cassandra_filestorage.storage import CassandraStorage
 from django.db import models
 fs = CassandraStorage()
 class ExampleModel(models.Model):
   file = models.FileField(storage=fs)
   name = models.SlugField(unique=True)
-  ```
+```
